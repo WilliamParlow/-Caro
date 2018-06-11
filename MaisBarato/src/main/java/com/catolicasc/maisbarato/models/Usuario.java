@@ -2,9 +2,11 @@ package com.catolicasc.maisbarato.models;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 import com.catolicasc.maisbarato.enums.Permissao;
 
+@MappedSuperclass
 public abstract class Usuario {
 
 	@Id

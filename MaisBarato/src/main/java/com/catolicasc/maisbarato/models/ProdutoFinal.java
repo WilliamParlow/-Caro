@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.catolicasc.maisbarato.enums.Categoria;
-
 @Entity
 public class ProdutoFinal {
 

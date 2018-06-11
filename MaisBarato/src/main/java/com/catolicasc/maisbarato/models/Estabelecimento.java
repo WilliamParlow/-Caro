@@ -3,8 +3,6 @@ package com.catolicasc.maisbarato.models;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.catolicasc.maisbarato.enums.Permissao;
@@ -12,7 +10,7 @@ import com.catolicasc.maisbarato.enums.Permissao;
 @Entity
 public class Estabelecimento extends Usuario {
 
-	@OneToMany
+	@OneToMany(mappedBy = "estabelecimento")
 	private List<Preco> precos;
 	
 	private String endereco;

@@ -1,12 +1,14 @@
 package com.catolicasc.maisbarato.models;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 import com.catolicasc.maisbarato.enums.Permissao;
 
 @Entity
 public class Cliente extends Usuario {
 
+	@OneToOne
 	private ListaCompras listaCompras;
 
 	Cliente() {

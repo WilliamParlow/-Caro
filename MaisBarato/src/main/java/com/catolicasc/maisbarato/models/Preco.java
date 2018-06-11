@@ -1,10 +1,11 @@
 package com.catolicasc.maisbarato.models;
 
+import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Preco {
@@ -13,11 +14,11 @@ public class Preco {
 	@GeneratedValue
 	private Long id;
 
-	@OneToMany
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Estabelecimento estabelecimento;
 	
 	@ManyToOne
-	private Produto produto;
+	private ProdutoFinal produtoFinal;
 	
 	private float preco;
 
@@ -37,12 +38,12 @@ public class Preco {
 		this.estabelecimento = estabelecimento;
 	}
 
-	public Produto getProduto() {
-		return produto;
+	public ProdutoFinal getProduto() {
+		return produtoFinal;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setProduto(ProdutoFinal produtoFinal) {
+		this.produtoFinal = produtoFinal;
 	}
 
 	public float getPreco() {
