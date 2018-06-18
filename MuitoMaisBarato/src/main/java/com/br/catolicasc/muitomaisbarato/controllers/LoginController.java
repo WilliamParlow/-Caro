@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.catolicasc.muitomaisbarato.enums.Categoria;
 import com.br.catolicasc.muitomaisbarato.repository.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,6 +8,9 @@
   <div th:replace="layout :: navbar">(navbar)</div>
   
  <div class="panel panel-default">
+ 		<div class="panel-heading">
+            <strong> <img class="img-circle" src="http://www.oxnardchamber.org/uploads/8/8/0/4/88045252/small-business-icon_1_orig.png" width="50px"> Estabelecimentos</strong>
+        </div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-sm table-striped table-hover table-bordered">
@@ -17,7 +20,6 @@
                             <th>Endereço</th>
                             <th>Cnpj</th>
                             <th>Nome</th>
-                            <th>Precos</th>
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
@@ -28,7 +30,6 @@
                             <td th:text="${estabelecimento.endereco}"></td>
                             <td th:text="${estabelecimento.cnpj}"></td>
                             <td th:text="${estabelecimento.nome}"></td>
-                            <td th:text="${estabelecimento.precos}"></td>
                             <td>
                                 <a class="btn btn-sm btn-primary" th:href="@{/estabelecimento/edit/{id}(id=${estabelecimento.id})}" >Editar</a>
                             </td>
