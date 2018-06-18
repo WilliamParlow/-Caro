@@ -19,7 +19,6 @@
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Email</th>
-                            <th>Lista de Compras</th>
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
@@ -29,7 +28,6 @@
                             <td th:text="${cliente.id}"></td>
                             <td th:text="${cliente.nome}"></td>
                             <td th:text="${cliente.email}"></td>
-                            <td th:text="${cliente.listaCompras}"></td>
                             <td>
                                 <a class="btn btn-sm btn-primary" th:href="@{/cliente/edit/{id}(id=${cliente.id})}" >Editar</a>
                             </td>

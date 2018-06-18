@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.catolicasc.muitomaisbarato.enums.Categoria;
 import com.br.catolicasc.muitomaisbarato.models.Produto;
 import com.br.catolicasc.muitomaisbarato.service.ProdutoService;
 
@@ -26,7 +27,8 @@ public class ProdutoController {
     private ProdutoService service;
 		
 	 @GetMapping("/")
-	    public ModelAndView findAll() {	         
+	    public ModelAndView findAll() {	   
+
 	        ModelAndView mv = new ModelAndView("Produto/produto");
 	        mv.addObject("produtos", service.findAll());
 	        return mv;
@@ -34,8 +36,9 @@ public class ProdutoController {
 	 
 	 @GetMapping("/add")
 	    public ModelAndView add(Produto produto) {
-	         
+		 	Categoria[] meusEnums = Categoria.values();
 	        ModelAndView mv = new ModelAndView("Produto/produtoAdd");
+	        mv.addObject("categorias",meusEnums);
 	        mv.addObject("produto", produto);
 	         
 	        return mv;
