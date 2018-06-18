@@ -7,7 +7,44 @@
 
   <div th:replace="layout :: navbar">(navbar)</div>
   
-Cliente motherfucker
+ <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong> <img class="img-circle" src="https://png.pngtree.com/element_origin_min_pic/17/09/19/d1faf27e162744f62f6781d85e5ef759.jpg" width="50px"> Devedores</strong>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-sm table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Lista de Compras</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="cliente : ${clientes}">
+                            <td th:text="${cliente.id}"></td>
+                            <td th:text="${cliente.nome}"></td>
+                            <td th:text="${cliente.email}"></td>
+                            <td th:text="${cliente.listaCompras}"></td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" th:href="@{/cliente/edit/{id}(id=${cliente.id})}" >Editar</a>
+                            </td>
+                            <td>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/cliente/delete/{id}(id=${cliente.id})}">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a class="btn btn-sm btn-success" th:href="@{/cliente/add/}" >Adicionar</a>
+        </div>
+    </div>
     
     <div th:include="layout :: footer" id="footer">(footer)</div>
 </body>

@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("cliente")
+@RequestMapping("estabelecimento")
 public class EstabelecimentoController {
 	
 		
 	 @GetMapping("/")
 	    public ModelAndView findAll() {	         
-	        ModelAndView mv = new ModelAndView("Cliente/cliente");
+	        ModelAndView mv = new ModelAndView("Estabelecimento/estabelecimento");
 	        return mv;
 	    }
 	 }

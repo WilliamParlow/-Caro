@@ -6,14 +6,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.catolicasc.muitomaisbarato.models.Cliente;
+
 @Controller
-@RequestMapping("estabelecimento")
+@RequestMapping("cliente")
 public class ClienteController {
 	
 		
 	 @GetMapping("/")
 	    public ModelAndView findAll() {	         
-	        ModelAndView mv = new ModelAndView("Estabelecimento/estabelecimento");
+	        ModelAndView mv = new ModelAndView("Cliente/cliente");
+	        return mv;
+	    }
+	 @GetMapping("/add")
+	    public ModelAndView add(Cliente cliente) {
+	         
+	        ModelAndView mv = new ModelAndView("Cliente/clienteAdd");
+	        mv.addObject("cliente", cliente);
+	         
 	        return mv;
 	    }
 	 }
