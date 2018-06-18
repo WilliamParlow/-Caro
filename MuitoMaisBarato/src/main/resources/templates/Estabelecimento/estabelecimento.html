@@ -2,12 +2,48 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
- <head th:include="layout :: htmlhead" th:with="title='Muito Mais barato!'"></head>
+ <head th:include="layout :: htmlhead" th:with="title='Estabelecimento - Muito Mais barato!'"></head>
 <body>
 
   <div th:replace="layout :: navbar">(navbar)</div>
   
-estabelecimento motherfucker
+ <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-sm table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Endereço</th>
+                            <th>Cnpj</th>
+                            <th>Nome</th>
+                            <th>Precos</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="estabelecimento : ${estabelecimentos}">
+                            <td th:text="${estabelecimento.id}"></td>
+                            <td th:text="${estabelecimento.endereco}"></td>
+                            <td th:text="${estabelecimento.cnpj}"></td>
+                            <td th:text="${estabelecimento.nome}"></td>
+                            <td th:text="${estabelecimento.precos}"></td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" th:href="@{/estabelecimento/edit/{id}(id=${estabelecimento.id})}" >Editar</a>
+                            </td>
+                            <td>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/estabelecimento/delete/{id}(id=${estabelecimento.id})}">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a class="btn btn-sm btn-success" th:href="@{/estabelecimento/add/}" >Adicionar</a>
+        </div>
+    </div>
     
     <div th:include="layout :: footer" id="footer">(footer)</div>
 </body>
