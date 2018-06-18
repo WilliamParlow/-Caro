@@ -46,7 +46,7 @@ public class EstabelecimentoController {
 	}
 	
 	@GetMapping("/edit/{id}")
-	public ModelAndView add(@PathVariable Long id) {
+	public ModelAndView edit(@PathVariable("id") Long id) {
 		
 		Estabelecimento estabelecimento = repo.findById(id).get();
 
@@ -68,7 +68,7 @@ public class EstabelecimentoController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public ModelAndView delete(@PathVariable Long id) {
+	public ModelAndView delete(@PathVariable("id") Long id) {
 		
 		repo.delete(repo.findById(id).get());
 		
