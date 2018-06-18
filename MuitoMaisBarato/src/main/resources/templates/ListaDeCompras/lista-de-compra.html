@@ -7,7 +7,42 @@
 
   <div th:replace="layout :: navbar">(navbar)</div>
   
-Lista de compras motherfucker
+
+ <div class="panel panel-default">
+   <div class="panel-heading">
+            <strong> <img class="img-circle" src="https://is2-ssl.mzstatic.com/image/thumb/Purple5/v4/e6/71/45/e671456c-7d7a-9185-4679-51cea6a34686/icon.png/1200x630bb.png" width="50px"> Listas de Compras</strong>
+        </div>
+  <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-sm table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produtos</th>                         
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="listadecompra : ${listasdecompras}">
+                            <td th:text="${listadecompra.id}"></td>
+                            <td th:text="${listadecompra.produtos}"></td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" th:href="@{/produto/edit/{id}(id=${produto.id})}" >Editar</a>
+                            </td>
+                            <td>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/produto/delete/{id}(id=${produto.id})}">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                       
+						    
+            </div>
+            <div class="panel-footer">
+            <a class="btn btn-sm btn-success" th:href="@{/lista-de-compra/add/}" >Adicionar</a>
+        </div>
+        </div>
     
     <div th:include="layout :: footer" id="footer">(footer)</div>
 </body>
