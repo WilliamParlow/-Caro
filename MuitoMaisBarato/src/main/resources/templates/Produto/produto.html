@@ -7,8 +7,46 @@
 
   <div th:replace="layout :: navbar">(navbar)</div>
   
-Produto motherfucker
-    
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <strong> <img class="img-circle" src="https://pt.seaicons.com/wp-content/uploads/2015/11/cart-add-icon.png" width="50px"> Produtos</strong>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-sm table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                            <th>Marca</th>                            
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="produto : ${produtos}">
+                            <td th:text="${produto.id}"></td>
+                            <td th:text="${produto.nome}"></td>
+                            <td th:text="${produto.categoria}"></td>
+                            <td th:text="${produto.descricao}"></td>
+                            <td th:text="${produto.Marca}"></td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" th:href="@{/produto/edit/{id}(id=${produto.id})}" >Editar</a>
+                            </td>
+                            <td>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/produto/delete/{id}(id=${produto.id})}">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         <div class="panel-footer">
+            <a class="btn btn-sm btn-success" th:href="@{/produto/add/}" >Adicionar</a>
+        </div>
+    </div>
     <div th:include="layout :: footer" id="footer">(footer)</div>
 </body>
 </html>

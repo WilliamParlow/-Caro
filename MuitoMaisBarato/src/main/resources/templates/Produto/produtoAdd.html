@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+ <head th:include="layout :: htmlhead" th:with="title='Produtos'"></head>
+<body>
+ <div th:replace="layout :: navbar">(navbar)</div>
+ 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            		<!-- IF Produto IS NOT NULL -->
+		<div th:if="${produto.id > 0}">
+		   <strong>Editar Produto</strong>
+		</div>
+		<!-- ELSE -->
+		<div th:unless="${produto.id > 0}">
+		  <strong>Novo Produto</strong>
+		</div>
+			
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" th:object="${produto}" th:action="@{/produto/save}" method="POST" style="margin: 10px">
+                <div class="form-group">
+                    <fieldset>
+                        <div class="form-group row">
+                            <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+                                <div th:each="detailedError : ${#fields.detailedErrors()}">
+                                    <span th:text="${detailedError.message}"></span>
+                                </div>
+                            </div>
+                        </div>                    
+                        <div class="form-group row">
+                            <div class="col-md-1">
+                                <input type="text" class="form-control input-sm" id="id" th:field="*{id}" readOnly="readonly"/>
+                            </div>
+                         </div>
+                        <div class="form-group row">                                                          
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
+                                <label>Nome</label>
+                                <input type="text" class="form-control input-sm" th:field="*{nome}" autofocus="autofocus" placeholder="Informe o nome do produto" maxlength="50"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('categoria')}? 'has-error'">
+                                <label>Categoria</label> 
+                                <input type="text" class="form-control input-sm" th:field="*{categoria}"  placeholder="Informe a categoria do produto"/>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('descricao')}? 'has-error'">
+                                <label>Descrição</label> 
+                                <input type="text" class="form-control input-sm" th:field="*{descricao}"  placeholder="Informe a descricao do produto"/>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('marca')}? 'has-error'">
+                                <label>Marca</label> 
+                                <input type="text" class="form-control input-sm" th:field="*{marca}"  placeholder="Informe a marca do produto"/>
+                            </div>
+                        </div>
+                                
+                                          
+                    </fieldset>
+                </div>
+                <div class="form-group row">
+                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                    <a th:href="@{/produto/}" class="btn btn-sm btn-default">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
