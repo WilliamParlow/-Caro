@@ -29,7 +29,7 @@ public class ClienteService {
         repository.deleteById(id);
     }
 
-    public int contEncomenda() {
+    public int contCliente() {
     	return repository.findAll().size();
     }
 

@@ -10,6 +10,7 @@
 
    	<title th:text="${title}">(title)</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/css.css">	
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,10 +54,11 @@
     </div>
 
     <div th:fragment="footer" id="footer">
-      <div class="container">
-        <p class="muted credit">Aplicação desenvolvida por <a href="https://github.com/AndersonMerten">Anderson Merten</a> e <a href="https://github.com/WilliamParlow/">William Parlow</a></p>
-      </div>
-      
+     <footer class="navbar-default navbar-fixed-bottom">
+  		<div class="container-fluid">
+    <p class="muted credit">Aplicação desenvolvida por <a href="https://github.com/AndersonMerten">Anderson Merten</a> e <a href="https://github.com/WilliamParlow/">William Parlow</a></p>
+  </div>
+</footer>
     </div>
 
   </body>

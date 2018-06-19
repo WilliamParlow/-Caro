@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.catolicasc.muitomaisbarato.enums.Permissao;
 import com.br.catolicasc.muitomaisbarato.models.Cliente;
 import com.br.catolicasc.muitomaisbarato.service.ClienteService;
 
@@ -33,6 +34,7 @@ public class ClienteController {
 
 		ModelAndView mv = new ModelAndView("Cliente/clienteAdd");
 		mv.addObject("cliente", cliente);
+		mv.addObject("roles", Permissao.values() );
 
 		return mv;
 	}

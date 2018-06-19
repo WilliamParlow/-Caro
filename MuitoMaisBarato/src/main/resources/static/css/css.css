@@ -1,0 +1,47 @@
+.comment {
+	background-color: #FAFAFA;
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 5ch;
+	border-radius: 2px;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, .4), 0 4px 8px rgba(0, 0, 0, .3), 0 4px 8px rgba(0, 0, 0, .2);
+}
+
+.comment-scalable-container,
+.comment-scalable {
+	z-index: 10;
+}
+
+.comment-scalable {
+	transform: scale(1.2);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, .4), 0 6px 12px rgba(0, 0, 0, .3), 0 6px 16px rgba(0, 0, 0, .2);
+}
+
+.comment span.student-name {
+	font-weight: bold;
+}
+
+.comment img {
+	width: 100%;
+	max-width: 256px;
+}
+
+.comment-head {
+	padding: 2ch 0;
+}
+
+.comment-content {
+	padding: 2ch;
+}
+
+.student-comment-header {
+	margin-bottom: 5ch;
+}
+
+.student-comments {
+	padding: 5ch 0;
+}
+
+.comment-container:hover {
+	
+}
