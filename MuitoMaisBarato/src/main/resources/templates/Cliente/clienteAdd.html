@@ -55,7 +55,7 @@
                          <div class="form-group row">
                             <div class="col-md-4" th:classappend="${#fields.hasErrors('password')}? 'has-error'">
                                 <label>Tipo de usuário:</label> 
-                                <select th:field="*{role}">
+                                <select th:field="*{role}" disabled>
 						     		<option  th:each="role : ${roles}" th:value="${role}" th:text="${role}"></option>
 								</select>	
                             </div>

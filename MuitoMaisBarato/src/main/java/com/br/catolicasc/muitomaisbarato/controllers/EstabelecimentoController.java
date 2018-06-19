@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.br.catolicasc.muitomaisbarato.enums.Permissao;
 import com.br.catolicasc.muitomaisbarato.models.Estabelecimento;
 import com.br.catolicasc.muitomaisbarato.repository.EstabelecimentoRepository;
 
@@ -41,6 +42,7 @@ public class EstabelecimentoController {
 
 		ModelAndView mv = new ModelAndView("Estabelecimento/estabelecimentoAdd");
 		mv.addObject("estabelecimento", estabelecimento);
+		mv.addObject("roles", Permissao.values() );
 
 		return mv;
 	}
