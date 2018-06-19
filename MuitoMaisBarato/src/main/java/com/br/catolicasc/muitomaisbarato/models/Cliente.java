@@ -11,7 +11,7 @@ public class Cliente extends Usuario {
 	@OneToOne
 	private ListaCompras listaCompras;
 
-	Cliente() {
+	public Cliente() {
 		this.setRole(Permissao.USUARIO);
 	}
 

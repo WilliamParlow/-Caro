@@ -1,65 +1,89 @@
 <html xmlns:th="http://www.thymeleaf.org">
-  <head th:fragment="htmlhead">
-    <meta charset="utf-8"></meta>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <meta name="description" content=""></meta>
-    <meta name="author" content=""></meta>
-    <link rel="shortcut icon" type="image/png" th:href="@{/images/logo.png}"></link>
+<head th:fragment="htmlhead">
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+<meta name="description" content=""></meta>
+<meta name="author" content=""></meta>
+<link rel="shortcut icon" type="image/png" th:href="@{/images/logo.png}"></link>
 
 
-   	<title th:text="${title}">(title)</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/css.css">	
+
+<title th:text="${title}">(title)</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+<link rel="stylesheet" href="/css/login.css">
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  </head>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-  <body>
-  
+<body>
 
-     <div th:fragment="navbar" class="navbar navbar-inverse navbar-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="https://github.com/WilliamParlow/-Caro">Mais Barato!</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-          		<li th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"><a th:href="@{/}"><span>Página inicial</span></a></li>
-             	<li th:classappend="${#httpServletRequest.getRequestURI() == '/cliente/' ? 'active':''}"><a th:href="@{/cliente/}"><span>Cliente</span></a></li>
-			    <li th:classappend="${#httpServletRequest.getRequestURI() == '/lista-de-compra/' ? 'active':''}"><a th:href="@{/lista-de-compra/}"><span>Lista de Compra</span></a></li>
-			    <li th:classappend="${#httpServletRequest.getRequestURI() == '/produto/' ? 'active':''}"><a th:href="@{/produto/}"><span>Produto</span></a></li>
-			    <li th:classappend="${#httpServletRequest.getRequestURI() == '/estabelecimento/' ? 'active':''}"><a th:href="@{/estabelecimento/}"><span>Estabelecimento</span></a></li>
-   			    <li th:classappend="${#httpServletRequest.getRequestURI() == '/login/' ? 'active':''}"><a th:href="@{/login/}"><span>Login</span></a></li>
-			    <li role="separator" ></li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="starter-template">
-        <h1>Spring MVC/Thymeleaf/Bootstrap</h1>
-        <p class="lead" th:text="${greeting}">(greeting)</p>
-      </div>
-    </div>
+	<div th:fragment="navbar" class="navbar navbar-inverse navbar-top"
+		role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"
+					href="https://github.com/WilliamParlow/-Caro">Mais Barato!</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"><a
+						th:href="@{/}"><span>Página inicial</span></a></li>
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/cliente/' ? 'active':''}"><a
+						th:href="@{/cliente/}"><span>Cliente</span></a></li>
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/lista-de-compra/' ? 'active':''}"><a
+						th:href="@{/lista-de-compra/}"><span>Lista de Compra</span></a></li>
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/produto/' ? 'active':''}"><a
+						th:href="@{/produto/}"><span>Produto</span></a></li>
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/estabelecimento/' ? 'active':''}"><a
+						th:href="@{/estabelecimento/}"><span>Estabelecimento</span></a></li>
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/login/' ? 'active':''}"><a
+						th:href="@{/login/}"><span>Login</span></a></li>
+					<li role="separator"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-    <div th:fragment="footer" id="footer">
-     <footer class="navbar-default navbar-fixed-bottom">
-  		<div class="container-fluid">
-    <p class="muted credit">Aplicação desenvolvida por <a href="https://github.com/AndersonMerten">Anderson Merten</a> e <a href="https://github.com/WilliamParlow/">William Parlow</a></p>
-  </div>
-</footer>
-    </div>
+	<div class="container">
+		<div class="starter-template">
+			<h1>Spring MVC/Thymeleaf/Bootstrap</h1>
+			<p class="lead" th:text="${greeting}">(greeting)</p>
+		</div>
+	</div>
 
-  </body>
+	<div th:fragment="footer" id="footer">
+		<footer class="navbar-default navbar-fixed-bottom">
+			<div class="container-fluid">
+				<p class="muted credit">
+					Aplicação desenvolvida por <a
+						href="https://github.com/AndersonMerten">Anderson Merten</a> e <a
+						href="https://github.com/WilliamParlow/">William Parlow</a>
+				</p>
+			</div>
+		</footer>
+	</div>
+
+</body>
 </html>
