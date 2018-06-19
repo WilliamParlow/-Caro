@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Nome</th>
                             <th>Produtos</th>                         
                             <th>Editar</th>
                             <th>Excluir</th>
@@ -26,12 +27,13 @@
                     <tbody>
                         <tr th:each="listadecompra : ${listasdecompras}">
                             <td th:text="${listadecompra.id}"></td>
-                            <td th:text="${listadecompra.produtos}"></td>
+                            <td th:text="${listadecompra.nome}"></td>
+                            <td><span style="display: block" th:each="produto : ${listadecompra.produtos}" th:text="${produto.nome}"></span></td>
                             <td>
-                                <a class="btn btn-sm btn-primary" th:href="@{/produto/edit/{id}(id=${produto.id})}" >Editar</a>
+                                <a class="btn btn-sm btn-primary" th:href="@{/lista-de-compra/edit/{id}(id=${listadecompra.id})}" >Editar</a>
                             </td>
                             <td>
-                            	<a class="delete btn btn-sm btn-danger" th:href="@{/produto/delete/{id}(id=${produto.id})}">Excluir</a>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/lista-de-compra/delete/{id}(id=${listadecompra.id})}">Excluir</a>
                             </td>
                         </tr>
                     </tbody>

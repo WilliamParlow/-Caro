@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -14,8 +15,18 @@ public class ListaCompras {
 	@GeneratedValue
 	private Long id;
 
-	@OneToMany
+	private String nome;
+
+	@ManyToMany
 	private List<Produto> produtos;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	public Long getId() {
 		return id;
