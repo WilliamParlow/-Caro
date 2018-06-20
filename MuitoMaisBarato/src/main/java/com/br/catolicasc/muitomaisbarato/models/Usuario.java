@@ -7,7 +7,7 @@ import javax.persistence.MappedSuperclass;
 import com.br.catolicasc.muitomaisbarato.enums.Permissao;
 
 @MappedSuperclass
-public abstract class Usuario {
+public class Usuario {
 
 	@Id
 	@GeneratedValue

@@ -2,19 +2,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-	<title>Login - </title>
-	<head th:include="layout :: htmlhead" th:with="title='Muito Mais barato! - Login'"></head>
+<title>Login -</title>
+<head th:include="layout :: htmlhead"
+	th:with="title='Muito Mais barato! - Login'"></head>
+<link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 
 
 	<div class="wrapper">
 		<div class="container">
-			<h1>Welcome</h1>
-
-			<form class="form">
-				<input type="text" placeholder="Username"> <input
-					type="password" placeholder="Password">
+			<h1>Bem vindo ao Mais Barato!</h1>
+			<form class="form" th:object="${usuario}"
+				th:action="@{/login/loginAction}" method="POST" style="margin: 10px">
+				<input required type="email" th:field="*{email}" placeholder="Email" />
+				<input required type="password" th:field="*{password}"
+					placeholder="Senha" />
 				<button type="submit" id="login-button">Login</button>
 			</form>
 		</div>
