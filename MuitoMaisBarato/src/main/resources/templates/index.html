@@ -10,71 +10,52 @@
 
 	<div th:replace="layout :: navbar">(navbar)</div>
 
-
-	<strong>
+<div class="container  col-xs-12 col-sm-12">
+  <strong>
 		<h2>Principais informações do sistema:</h2>
 	</strong>
+  <div class="panel panel-default col-xs-12 col-sm-4">
+    <div class="panel-heading title row">
+    	<div class="col-xs-3 col-sm-3">
+    		<img class="card-img-top img-circle" src="https://media.istockphoto.com/vectors/shopping-trolley-cart-icon-in-green-circle-vector-vector-id898475764?k=6&m=898475764&s=612x612&w=0&h=8aYKNE02wUGGsa2LUvCxkfDRNr91y6OJJrwsvj882NY=" alt="Produtos" width="50px"/>
+    	</div>
+    	<div class="col-xs-9 col-sm-9">
+    		Produtos
+    	</div>
+    </div>
+    <div class="panel-body row"> <p class="card-text">Existem <span	th:text="*{qtdProdutos}"></span> produtos cadastrados em nosso sistema!</p></div>
+    <div class="panel-footer row"> <a href="/produto/" class="btn btn-primary">Listar os produtos cadastrados</a></div>
+  </div>
+  
+  <div class="panel panel-default col-xs-12 col-sm-4 ">
+    <div class="panel-heading title row">
+    <div class="col-xs-3 col-sm-3">
+    		<img class="card-img-top img-circle" src="https://png.pngtree.com/element_origin_min_pic/17/09/19/d1faf27e162744f62f6781d85e5ef759.jpg" alt="Clientes" width="50px">
+    	</div>
+    	<div class="col-xs-9 col-sm-9">
+    		Clientes
+    	</div>
+    </div>
+    <div class="panel-body row"> <p><span th:text="*{qtdClientes}"></span> pessoas estão cadastradas no sistema atualmente.</p></div>
+    <div class="panel-footer row"> <a href="/cliente/" class="btn btn-primary">Ver as informações dos clientes</a></div>
+  </div>
+  
+  <div class="panel panel-default col-xs-12 col-sm-4 ">
+    <div class="panel-heading title row">
+    <div class="col-xs-3 col-sm-3">
+    		<img class="card-img-top img-circle" src="http://www.oxnardchamber.org/uploads/8/8/0/4/88045252/small-business-icon_1_orig.png" alt="Estabelecimentos" width="50px">
+    	</div>
+    	<div class="col-xs-9 col-sm-9">
+    		Estabelecimentos
+    	</div>
+    	</div>
+    <div class="panel-body row"> <p><span th:text="*{qtdEstabelecimentos}"></span> estabelecimentos já se cadastraram conosco!</p></div>
+    <div class="panel-footer row"> <a href="/estabelecimento/" class="btn btn-primary">Ver os estabelecimentos cadastrados</a></div>
+  </div>
+</div>
 
 
-
-	<div class="row student-comments">
-
-		<div class="student-comment-content">
-
-			<div class="comment-container col-xs-12 col-sm-4">
-				<div class="comment">
-					<div class="comment-head">
-						<img class="img-circle"
-							src="https://media.istockphoto.com/vectors/shopping-trolley-cart-icon-in-green-circle-vector-vector-id898475764?k=6&m=898475764&s=612x612&w=0&h=8aYKNE02wUGGsa2LUvCxkfDRNr91y6OJJrwsvj882NY="
-							alt="Student comments">
-					</div>
-					<div class="comment-content">
-						<p>
-							<span class="student-name">Produtos:&nbsp;</span>Existem <span
-								th:text="*{qtdProdutos}"></span> produtos cadastrados em nosso sistema!
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="comment-container comment-scalable-container col-xs-12 col-sm-4">
-				<div class="comment comment-scalable">
-					<div class="comment-head">
-						<img class="img-circle"
-							src="https://png.pngtree.com/element_origin_min_pic/17/09/19/d1faf27e162744f62f6781d85e5ef759.jpg"
-							alt="Student comments">
-					</div>
-					<div class="comment-content">
-						<p>
-							<span class="student-name">Clientes:&nbsp;</span> <span
-								th:text="*{qtdClientes}"></span> pessoas estão cadastradas no
-							sistema atualmente.
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="comment-container col-xs-12 col-sm-4">
-				<div class="comment">
-					<div class="comment-head">
-						<img class="img-circle"
-							src="http://www.oxnardchamber.org/uploads/8/8/0/4/88045252/small-business-icon_1_orig.png"
-							alt="Student comments">
-					</div>
-					<div class="comment-content">
-						<p>
-							<span class="student-name">Estabelecimentos:&nbsp;</span><span
-								th:text="*{qtdEstabelecimentos}"></span> estabelecimentos já se
-							cadastraram conosco!
-						</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	</div>
+	
 
 	<div th:include="layout :: footer" id="footer">(footer)</div>
 </body>
