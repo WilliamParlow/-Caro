@@ -17,8 +17,6 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Endereço</th>
-                            <th>Cnpj</th>
                             <th>Nome</th>
                             <th>Editar</th>
                             <th>Excluir</th>
@@ -27,14 +25,12 @@
                     <tbody>
                         <tr th:each="estabelecimento : ${estabelecimentos}">
                             <td th:text="${estabelecimento.id}"></td>
-                            <td th:text="${estabelecimento.endereco}"></td>
-                            <td th:text="${estabelecimento.cnpj}"></td>
                             <td th:text="${estabelecimento.nome}"></td>
                             <td>
-                                <a class="btn btn-sm btn-primary" th:href="@{/estabelecimento/edit/{id}(id=${estabelecimento.id})}" >Editar</a>
+                                <a class="btn btn-sm btn-primary" th:href="@{/usuario/edit-estabelecimento/{id}(id=${estabelecimento.id})}" >Editar</a>
                             </td>
                             <td>
-                            	<a class="delete btn btn-sm btn-danger" th:href="@{/estabelecimento/delete/{id}(id=${estabelecimento.id})}">Excluir</a>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/usuario/delete-estabelecimento/{id}(id=${estabelecimento.id})}">Excluir</a>
                             </td>
                         </tr>
                     </tbody>
@@ -42,7 +38,7 @@
             </div>
         </div>
         <div class="panel-footer">
-            <a class="btn btn-sm btn-success" th:href="@{/estabelecimento/add/}" >Adicionar</a>
+            <a class="btn btn-sm btn-success" th:href="@{/usuario/add-estabelecimento/}" >Adicionar</a>
         </div>
     </div>
     

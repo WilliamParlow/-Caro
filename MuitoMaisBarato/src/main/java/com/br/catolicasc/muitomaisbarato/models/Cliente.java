@@ -1,18 +1,29 @@
 package com.br.catolicasc.muitomaisbarato.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.br.catolicasc.muitomaisbarato.enums.Permissao;
-
 @Entity
-public class Cliente extends Usuario {
+public class Cliente {
+
+	@Id
+	@GeneratedValue
+	private long id;
 
 	@OneToOne
 	private ListaCompras listaCompras;
 
-	public Cliente() {
-		this.setRole(Permissao.USUARIO);
+	@OneToOne(optional = true)
+	private Usuario usuario;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public ListaCompras getListaCompras() {
@@ -21,6 +32,14 @@ public class Cliente extends Usuario {
 
 	public void setListaCompras(ListaCompras listaCompras) {
 		this.listaCompras = listaCompras;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }

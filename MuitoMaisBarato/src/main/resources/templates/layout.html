@@ -11,7 +11,7 @@
 <title th:text="${title}">(title)</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
+
 <link rel="stylesheet" type="text/css" href="/css/css.css">
 
 <!-- jQuery library -->
@@ -26,8 +26,8 @@
 <body>
 
 
-	<div th:fragment="navbar" class="navbar navbar-inverse navbar-top no-border"
-		role="navigation">
+	<div th:fragment="navbar"
+		class="navbar navbar-inverse navbar-top no-border" role="navigation">
 		<div class="container wrapper">
 			<div class="navbar-header ">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -45,20 +45,21 @@
 						th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"><a
 						th:href="@{/}"><span class="white">Página inicial</span></a></li>
 					<li
-						th:classappend="${#httpServletRequest.getRequestURI() == '/cliente/' ? 'active':''}"><a
-						th:href="@{/cliente/}"><span  class="white">Cliente</span></a></li>
-					<li
 						th:classappend="${#httpServletRequest.getRequestURI() == '/lista-de-compra/' ? 'active':''}"><a
-						th:href="@{/lista-de-compra/}"><span  class="white">Lista de Compra</span></a></li>
+						th:href="@{/lista-de-compra/}"><span class="white">Lista
+								de Compra</span></a></li>
 					<li
 						th:classappend="${#httpServletRequest.getRequestURI() == '/produto/' ? 'active':''}"><a
-						th:href="@{/produto/}"><span  class="white">Produto</span></a></li>
+						th:href="@{/produto/}"><span class="white">Produto</span></a></li>
+					<li
+						th:classappend="${#httpServletRequest.getRequestURI() == '/cliente/' ? 'active':''}"><a
+						th:href="@{/usuario/cliente/}"><span class="white">Cliente</span></a></li>
 					<li
 						th:classappend="${#httpServletRequest.getRequestURI() == '/estabelecimento/' ? 'active':''}"><a
-						th:href="@{/estabelecimento/}"><span  class="white">Estabelecimento</span></a></li>
+						th:href="@{/usuario/estabelecimento/}"><span class="white">Estabelecimento</span></a></li>
 					<li
 						th:classappend="${#httpServletRequest.getRequestURI() == '/login/' ? 'active':''}"><a
-						th:href="@{/login/}"><span  class="white">Login</span></a></li>
+						th:href="@{/login/}"><span class="white">Log out</span></a></li>
 					<li role="separator"></li>
 				</ul>
 			</div>

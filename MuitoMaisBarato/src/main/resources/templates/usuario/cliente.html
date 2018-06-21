@@ -29,10 +29,10 @@
                             <td th:text="${cliente.nome}"></td>
                             <td th:text="${cliente.email}"></td>
                             <td>
-                                <a class="btn btn-sm btn-primary" th:href="@{/cliente/edit/{id}(id=${cliente.id})}" >Editar</a>
+                                <a class="btn btn-sm btn-primary" th:href="@{/usuario/edit-cliente/{id}(id=${cliente.id})}" >Editar</a>
                             </td>
                             <td>
-                            	<a class="delete btn btn-sm btn-danger" th:href="@{/cliente/delete/{id}(id=${cliente.id})}">Excluir</a>
+                            	<a class="delete btn btn-sm btn-danger" th:href="@{/usuario/delete-cliente/{id}(id=${cliente.id})}">Excluir</a>
                             </td>
                         </tr>
                     </tbody>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="panel-footer">
-            <a class="btn btn-sm btn-success" th:href="@{/cliente/add/}" >Adicionar</a>
+            <a class="btn btn-sm btn-success" th:href="@{/usuario/add-cliente/}" >Adicionar</a>
         </div>
     </div>
     
