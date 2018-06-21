@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Login -</title>
 <head th:include="layout :: htmlhead"
 	th:with="title='Muito Mais barato! - Login'"></head>
@@ -12,14 +12,32 @@
 
 	<div class="wrapper">
 		<div class="container">
-			<h1>Bem vindo ao Mais Barato!</h1>
-			<form class="form" th:object="${usuario}"
-				th:action="@{/login/loginAction}" method="POST" style="margin: 10px">
-				<input required type="email" th:field="*{email}" placeholder="Email" />
-				<input required type="password" th:field="*{password}"
-					placeholder="Senha" />
-				<button type="submit" id="login-button">Login</button>
-			</form>
+			<div class="wrapper-divider">
+				<h1>Entre no Mais Barato!</h1>
+				<form class="form" th:object="${usuario}"
+					th:action="@{/login/loginAction}" method="POST"
+					style="margin: 10px">
+					<input required type="email" th:field="*{email}"
+						placeholder="Email" /> <input required type="password"
+						th:field="*{password}" placeholder="Senha" />
+					<button type="submit" class="login-button">Entrar</button>
+				</form>
+			</div>
+			<div class="wrapper-divider">
+				<h1>Cadastre-se no Mais Barato!</h1>
+				<form class="form" th:object="${usuario}"
+					th:action="@{/login/cadastrar}" method="POST" style="margin: 10px">
+					<input required type="text" th:field="*{nome}" placeholder="Nome" />
+					<input required type="email" th:field="*{email}"
+						placeholder="Email" /> <input required type="password"
+						th:field="*{password}" placeholder="Senha" /> <label>Categoria</label>
+					<select th:field="*{role}" required>
+						<option th:each="role : ${roles}"
+							th:value="${role}" th:text="${role}"></option>
+					</select>
+					<button type="submit" class="login-button">Cadastrar</button>
+				</form>
+			</div>
 		</div>
 
 		<ul class="bg-bubbles">
